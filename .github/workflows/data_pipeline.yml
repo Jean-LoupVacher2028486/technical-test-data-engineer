@@ -31,8 +31,8 @@ jobs:
       - name: check changes
         id: git-check
         run: |
-          git config user.name 'github-actions'
-          git config user.email 'github-actions@github.com'
+          git config user.name 'Jean-LoupVacher2028486'
+          git config user.email 'jean-loup.vacher@polymtl.ca'
           git add .
           git diff --staged --quiet || echo "changes==true" >> $GITHUB_ENV
 

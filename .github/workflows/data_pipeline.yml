@@ -12,9 +12,7 @@ jobs:
 
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        uses: actions/checkout@v2
         
       - name: setup python
         uses: actions/setup-python@v5
@@ -29,13 +27,8 @@ jobs:
         run: python etl.py
 
       - name: check changes
-        run: |
-          git config user.name 'Jean-LoupVacher2028486'
-          git config user.email 'jean-loup.vacher@polymtl.ca'
-          git add .
-
-      - name: commit and push changes
-        if: env.changes == 'true'
-        run: |
-          git commit -m "updated database"
+        run: |  
+          git config --global user.name 'Jean-LoupVacher2028486'
+          git config --global user.email 'jean-loup.vacher@users.noreply.github.com'
+          git commit -am "Automated report"
           git push

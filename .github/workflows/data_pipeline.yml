@@ -29,12 +29,10 @@ jobs:
         run: python etl.py
 
       - name: check changes
-        id: git-check
         run: |
           git config user.name 'Jean-LoupVacher2028486'
           git config user.email 'jean-loup.vacher@polymtl.ca'
           git add .
-          git diff --staged --quiet || echo "changes==true" >> $GITHUB_ENV
 
       - name: commit and push changes
         if: env.changes == 'true'

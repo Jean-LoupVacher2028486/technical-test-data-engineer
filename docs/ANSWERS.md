@@ -30,6 +30,10 @@ Le pipeline de données est automatisé pour s'exécuter 1 fois par jour à 2h30
 
     Il est aussi possible d'activer manuellement le workflow à partir de GIT (workflow_dispatch).
 
+-----
+IMPORTANT - Pour que le automated workflow run sur votre repo GIT, il faut changer le user.name (ligne 31) et le user.email (ligne 32) dans le fichier data-pipeline.yml pour votre propre user.name et user.email GITHUB.
+-----
+
 Si le workflow devennait plus complexe (e.g. plusieurs scripts à exécuter en parallèle, etc.), il pourrait être avantageux d'utiliser un outil d'orchestration spécialisé (e.g. Airflow) à la place.
 
 NOTA BENE - Mes tests unitaires de contrôle de la qualité des données ont révélé que le genre des tracks n'est pas choisi parmis les genres proposés dans la liste genre_list() fournie (mais plutôt un mot aléatoire).

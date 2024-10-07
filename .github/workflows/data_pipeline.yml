@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-data-pipeline:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout repo

@@ -31,5 +31,5 @@ jobs:
           git config --global user.name 'Jean-LoupVacher2028486'
           git config --global user.email 'jean-loup.vacher@users.noreply.github.com'
           git add mydb.db
-          git commit -am "Automated report"
+          git commit -am "Update database"
           git push

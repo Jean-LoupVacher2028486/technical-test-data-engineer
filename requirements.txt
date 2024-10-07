@@ -3,3 +3,12 @@ fastapi
 uvicorn
 fastapi_pagination
 pytest
+
+sqlalchemy
+requests
+
+# pre-installed (native) python modules (?)
+time
+datetime
+subprocess
+os

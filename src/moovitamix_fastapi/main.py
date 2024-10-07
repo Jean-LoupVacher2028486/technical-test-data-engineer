@@ -5,6 +5,9 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import Page, add_pagination, paginate
 from generate_fake_data import FakeDataGenerator
 
+from fastapi_pagination.utils import disable_installed_extensions_check
+disable_installed_extensions_check()
+
 Page = Page.with_custom_options(
     size=Query(100, ge=1, le=100),
 )

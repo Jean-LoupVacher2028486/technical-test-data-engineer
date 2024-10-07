@@ -1,0 +1,27 @@
+name: data_pipeline_workflow
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 2 * * *"
+
+jobs:
+  run-data-pipeline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: run etl data pipeline
+        run: python etl.py
